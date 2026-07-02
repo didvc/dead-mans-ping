@@ -1,0 +1,10 @@
+$ mip --endpoint https://hc-ping.com/abcd --inactive-period 1h --cold-period 1h \
+      --heartbeat-endpoint https://hc-ping.com/alive --server
+
+[17:22:01] heartbeat https://hc-ping.com/alive -> 200
+[17:22:01] control server listening on http://127.0.0.1:8080 (endpoints: /extend, /help)
+[17:22:07] mode=inactive flag=false idle=6s | 1h 0.0px/0  1d 0.0px/0  1w 0.0px/0
+[17:23:12] inactivity deadline extended to 2026-07-02T18:23:12Z (from 127.0.0.1:54210)
+
+$ curl 'http://127.0.0.1:8080/extend?seconds=3600'
+extended until 1751480592 (2026-07-02T18:23:12Z)

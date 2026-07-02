@@ -1,0 +1,26 @@
+# Build output
+/bin/
+
+# Go
+*.exe
+*.test
+*.out
+coverage.*
+
+# Editor/OS cruft
+.DS_Store
+*.swp
+
+# Agent scaffolding and internal working docs (never publish).
+# Note: agent-references here is a symlink, so match the bare name too — a
+# trailing-slash pattern alone does not catch symlinks.
+agent-*/
+agent-references
+agents.md
+AGENTS.md
+.opencode
+.ignore
+blueprint.md
+
+# Node (docs tooling, if added later)
+node_modules/

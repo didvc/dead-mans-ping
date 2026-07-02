@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: dead-mans-ping
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+authors:
+  - alias: didvc
+repository-code: https://github.com/didvc/dead-mans-ping
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-07-02
+abstract: >
+  dead-mans-ping is a cross-platform (Linux, Windows) Go CLI that sends HTTP
+  GET requests to one or more endpoints based on mouse-movement activity. It
+  polls the absolute cursor position without elevated privileges or global
+  input hooks, making it suitable as a dead-man's switch, presence beacon, or
+  idle-notification trigger. An optional control server can postpone the
+  inactivity deadline remotely, and an independent heartbeat loop reports that
+  the process itself is alive.
+keywords:
+  - dead-mans-switch
+  - cli
+  - golang
+  - mouse-activity
+  - idle-detection
+  - http-ping
+  - heartbeat
+  - cross-platform
+  - monitoring
+  - automation

@@ -1,0 +1,6 @@
+$ mip --endpoint https://hc-ping.com/abcd-1234 --inactive-period 30s --cold-period 1h
+
+[17:20:14] mode=inactive flag=false idle=5s  | 1h 4821.5px/142  1d 4821.5px/142  1w 4821.5px/142
+[17:20:29] mode=inactive flag=false idle=20s | 1h 4821.5px/142  1d 4821.5px/142  1w 4821.5px/142
+[17:20:44] mode=inactive flag=true  idle=31s | 1h   12.0px/3    1d   12.0px/3    1w   12.0px/3
+[17:20:44] ping https://hc-ping.com/abcd-1234 -> 200

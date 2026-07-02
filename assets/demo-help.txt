@@ -1,0 +1,35 @@
+Usage of mip:
+  -active-ping
+    	ping instantly on mouse movement (overrides --inactive-ping; --inactive-period ignored)
+  -cold-period string
+    	minimum wait between pings; keeps running instead of exiting (overrides --onetime)
+  -endpoint value
+    	URL to send a GET request to; repeat for multiple endpoints
+  -heartbeat-endpoint string
+    	URL to GET on a fixed interval as a liveness check (independent of activity)
+  -heartbeat-interval string
+    	interval for --heartbeat-endpoint (default "60s")
+  -inactive-period string
+    	inactivity threshold before pinging (e.g. 3d, 12h) (default "3d")
+  -inactive-ping
+    	ping when the mouse is inactive for --inactive-period (default) (default true)
+  -move-threshold float
+    	minimum pixel distance counted as movement (default 1)
+  -no-log
+    	disable status and log output
+  -onetime
+    	exit after the first ping / after continuous pings stop (default) (default true)
+  -ping-continuous
+    	keep pinging every --ping-interval while flagged; stops when the flag clears
+  -ping-interval string
+    	interval between pings for --ping-continuous (default "30s")
+  -ping-once
+    	send a single ping when flagged (default) (default true)
+  -poll-interval string
+    	cursor sampling interval (default "1s")
+  -server
+    	run the control HTTP server (endpoints: /extend, /help)
+  -server-addr string
+    	listen address for --server (default "127.0.0.1:8080")
+  -timeout string
+    	per-request HTTP timeout (default "10s")
