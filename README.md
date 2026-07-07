@@ -171,3 +171,13 @@ GET requests you configure via `--endpoint` and `--heartbeat-endpoint`.
 ## License
 
 Licensed under the [Apache License 2.0](LICENSE).
+
+<!-- BEGIN gh-mutual-linking -->
+
+---
+
+### Related projects
+
+- [**chatnote**](https://github.com/didvc/chatnote) — Self-hosted note-to-self chatrooms. Privacy-first by design, infinite rooms, Markdown, ephemeral/incognito room types, image uploads, tags, JSON import/export. Astro SSR + SQLite.
+- [**visited**](https://github.com/didvc/visited) — Securely collect browsing history over browsers.
+<!-- END gh-mutual-linking -->
