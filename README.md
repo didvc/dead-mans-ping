@@ -1,3 +1,5 @@
+English · [日本語](README-ja.md) · [Deutsch](README-de.md) · [Français](README-fr.md)
+
 # dead-mans-ping (`mip`)
 
 [![CI](https://github.com/didvc/dead-mans-ping/actions/workflows/ci.yml/badge.svg)](https://github.com/didvc/dead-mans-ping/actions/workflows/ci.yml)
@@ -5,17 +7,17 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/didvc/dead-mans-ping)](https://goreportcard.com/report/github.com/didvc/dead-mans-ping)
 
 A small cross-platform (Linux, Windows) Go CLI that sends HTTP `GET` requests
-to one or more endpoints based on **mouse-movement activity** — for example, a
+to one or more endpoints based on mouse-movement activity, for example, a
 dead-man's switch that pings a URL after your machine has been idle for a few
 days.
 
-It works by **polling the absolute cursor position** at a fixed interval. This
+It works by polling the absolute cursor position at a fixed interval. This
 needs no elevated privileges and installs no global input hooks, so it is safe
 to run as an ordinary user.
 
-- **Linux:** requires an X11 session (`$DISPLAY`). Works with XWayland windows;
+- Linux: requires an X11 session (`$DISPLAY`). Works with XWayland windows;
   native Wayland does not expose a global pointer position by design.
-- **Windows:** uses `user32!GetCursorPos` via the standard library (no cgo).
+- Windows: uses `user32!GetCursorPos` via the standard library (no cgo).
 
 ![dead-mans-ping in action](assets/demo-run.png)
 
@@ -49,21 +51,21 @@ and a size-limited body read.
 
 ### Behaviour is three orthogonal choices
 
-**When to fire (the "flag"):**
+When to fire (the "flag"):
 
 | flag                | meaning                                                             |
 | ------------------- | ------------------------------------------------------------------- |
 | `--inactive-ping`   | *(default)* flag raised once the mouse is idle ≥ `--inactive-period`|
 | `--active-ping`     | flag raised the instant any movement is seen (`--inactive-period` ignored) |
 
-**How to ping while flagged:**
+How to ping while flagged:
 
 | flag                | meaning                                                             |
 | ------------------- | ------------------------------------------------------------------- |
 | `--ping-once`       | *(default)* one ping per flagged episode                            |
 | `--ping-continuous` | ping every `--ping-interval` while flagged; stops when the flag clears |
 
-**Lifecycle:**
+Lifecycle:
 
 | flag                | meaning                                                             |
 | ------------------- | ------------------------------------------------------------------- |
@@ -74,7 +76,7 @@ and a size-limited body read.
 
 | flag                  | default | description                                        |
 | --------------------- | ------- | -------------------------------------------------- |
-| `--endpoint URL`         | —                 | activity-ping target; repeat for multiple    |
+| `--endpoint URL`         | -                 | activity-ping target; repeat for multiple    |
 | `--inactive-period D`    | `3d`              | idle threshold for `--inactive-ping`         |
 | `--ping-interval D`      | `30s`             | repeat interval for `--ping-continuous`      |
 | `--cold-period D`        | unset             | minimum gap between pings (implies not `--onetime`) |
@@ -89,7 +91,7 @@ and a size-limited body read.
 
 ## Heartbeat (liveness)
 
-`--heartbeat-endpoint` is a **separate** loop from the activity pings: it GETs
+`--heartbeat-endpoint` is a separate loop from the activity pings: it GETs
 its URL every `--heartbeat-interval` (starting immediately) regardless of mouse
 activity, so an external monitor can tell this process is still alive. It never
 shares an endpoint or timing with the activity pings.
@@ -110,10 +112,10 @@ by default):
 | `GET /extend?until=<unix>`  | push the inactivity deadline to an absolute unix timestamp     |
 | `GET /help`                 | usage text                                                    |
 
-`/extend` postpones the moment an `--inactive-ping` fires — a remote "I'm still
+`/extend` postpones the moment an `--inactive-ping` fires: a remote "I'm still
 here" that works without touching the mouse. The deadline only ever moves
 forward; provide exactly one of `seconds`/`until`. Because this can defeat a
-dead-man's switch, the server binds to localhost by default — only expose it
+dead-man's switch, the server binds to localhost by default; only expose it
 behind your own auth/proxy.
 
 ```sh
@@ -131,7 +133,7 @@ Durations accept `s`, `m`, `h`, plus `d` (days) and `w` (weeks), e.g. `3d`,
 
 Unless `--no-log` is given, a live status line shows the current mode, idle
 time, and a movement summary (total pixel distance and move count) over the
-last **1h / 1d / 1w**:
+last 1h / 1d / 1w:
 
 ```
 [14:22:07] mode=inactive flag=false idle=1m3s | 1h 4821.5px/142 1d 4821.5px/142 1w 4821.5px/142
@@ -164,7 +166,7 @@ All flags (`mip --help`):
 ## Privacy
 
 The tool reads only the cursor's screen coordinates, in memory, to detect
-movement — no keystrokes, no window titles, no screen contents. Nothing is
+movement: no keystrokes, no window titles, no screen contents. Nothing is
 persisted to disk and there is no telemetry. The only network traffic is the
 GET requests you configure via `--endpoint` and `--heartbeat-endpoint`.
 
@@ -178,6 +180,6 @@ Licensed under the [Apache License 2.0](LICENSE).
 
 ### Related projects
 
-- [**chatnote**](https://github.com/didvc/chatnote) — Self-hosted note-to-self chatrooms. Privacy-first by design, infinite rooms, Markdown, ephemeral/incognito room types, image uploads, tags, JSON import/export. Astro SSR + SQLite.
-- [**visited**](https://github.com/didvc/visited) — Securely collect browsing history over browsers.
+- [chatnote](https://github.com/didvc/chatnote): Self-hosted note-to-self chatrooms. Privacy-first by design, infinite rooms, Markdown, ephemeral/incognito room types, image uploads, tags, JSON import/export. Astro SSR + SQLite.
+- [visited](https://github.com/didvc/visited): Securely collect browsing history over browsers.
 <!-- END gh-mutual-linking -->
