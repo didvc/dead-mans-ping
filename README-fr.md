@@ -8,6 +8,8 @@
 
 Un petit CLI multiplateforme (Linux, Windows) écrit en Go, qui envoie des requêtes HTTP `GET` vers un ou plusieurs endpoints selon l’activité de la souris, par exemple un interrupteur d’homme mort qui appelle une URL quand votre machine est restée inactive quelques jours.
 
+![didvc/dead-mans-ping](assets/social-preview.png)
+
 Il interroge la position absolue du curseur à intervalle fixe. Cela ne demande aucun privilège élevé et n’installe aucun hook d’entrée global : on peut donc le lancer sans risque en tant qu’utilisateur ordinaire.
 
 - Linux : nécessite une session X11 (`$DISPLAY`). Fonctionne avec les fenêtres XWayland ; Wayland natif n’expose pas, par conception, la position globale du pointeur.

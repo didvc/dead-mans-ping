@@ -11,6 +11,8 @@ to one or more endpoints based on mouse-movement activity, for example, a
 dead-man's switch that pings a URL after your machine has been idle for a few
 days.
 
+![didvc/dead-mans-ping](assets/social-preview.png)
+
 It works by polling the absolute cursor position at a fixed interval. This
 needs no elevated privileges and installs no global input hooks, so it is safe
 to run as an ordinary user.

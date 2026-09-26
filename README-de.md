@@ -8,6 +8,8 @@
 
 Ein kleines plattformübergreifendes (Linux, Windows) Go-CLI, das je nach Mausaktivität HTTP-`GET`-Anfragen an einen oder mehrere Endpunkte sendet, zum Beispiel als Totmannschalter, der eine URL anpingt, wenn dein Rechner ein paar Tage unbenutzt war.
 
+![didvc/dead-mans-ping](assets/social-preview.png)
+
 Dazu wird die absolute Cursorposition in einem festen Intervall abgefragt. Das braucht keine erhöhten Rechte und installiert keine globalen Eingabe-Hooks, lässt sich also gefahrlos als normaler Benutzer ausführen.
 
 - Linux: benötigt eine X11-Sitzung (`$DISPLAY`). Funktioniert mit XWayland-Fenstern; natives Wayland gibt die globale Zeigerposition absichtlich nicht preis.
